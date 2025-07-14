@@ -1,0 +1,277 @@
+/* Styles globaux pour l'application NASA */
+:root {
+  --nasa-blue: #0B3D91;
+  --nasa-red: #FC3D21;
+  --space-black: #0A0A0A;
+  --star-white: #FFFFFF;
+  --cosmic-purple: #6B46C1;
+  --mars-orange: #FF6B35;
+  --nebula-pink: #E91E63;
+  --galaxy-indigo: #3F51B5;
+  --comet-cyan: #00BCD4;
+  --asteroid-gray: #607D8B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, var(--space-black) 0%, #1a1a2e 50%, #16213e 100%);
+  color: var(--star-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: var(--star-white);
+}
+
+/* Animation d'étoiles en arrière-plan */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2);
+  }
+}
+
+/* Animations d'entrée */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+/* Styles pour les cartes */
+.nasa-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.nasa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--nasa-red);
+}
+
+/* Styles pour les boutons */
+.btn-nasa {
+  background: linear-gradient(45deg, var(--nasa-blue), var(--cosmic-purple));
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-nasa:hover {
+  background: linear-gradient(45deg, var(--cosmic-purple), var(--nasa-blue));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(107, 70, 193, 0.4);
+  color: white;
+}
+
+.btn-mars {
+  background: linear-gradient(45deg, var(--mars-orange), var(--nebula-pink));
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-mars:hover {
+  background: linear-gradient(45deg, var(--nebula-pink), var(--mars-orange));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+  color: white;
+}
+
+/* Styles pour les tableaux */
+.nasa-table {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nasa-table th {
+  background: var(--nasa-blue);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.nasa-table td {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--star-white);
+}
+
+/* Styles pour les formulaires */
+.nasa-form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: var(--star-white);
+  padding: 12px 15px;
+}
+
+.nasa-form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--nasa-red);
+  box-shadow: 0 0 0 0.2rem rgba(252, 61, 33, 0.25);
+  color: var(--star-white);
+}
+
+.nasa-form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Styles pour les badges */
+.badge-nasa {
+  background: var(--nasa-blue);
+  color: white;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.badge-mars {
+  background: var(--mars-orange);
+  color: white;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+/* Styles pour les loaders */
+.nasa-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner-border-nasa {
+  color: var(--nasa-red);
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Styles pour les images */
+.nasa-image {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.nasa-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nasa-card {
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nasa-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cosmic-purple);
+} 
