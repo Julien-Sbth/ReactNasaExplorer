@@ -19,6 +19,7 @@ import NasaPowerPage from './pages/NasaPowerPage';
 import StemPage from './pages/StemPage';
 import EarthPage from './pages/EarthPage';
 import FireballsPage from './pages/FireballsPage';
+import { Analytics } from "@vercel/analytics/react";
 import './App.css';
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/fireballs" element={<FireballsPage />} />
         </Routes>
       </main>
+      <Analytics />
     </div>
   );
 }
